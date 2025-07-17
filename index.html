@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>MapTiler Geocoder component</title>
 
-    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet">
+    <link
+      href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
 
-    <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v2.1.4/style.css" rel="stylesheet">
+    <link
+      href="https://cdn.maptiler.com/maptiler-geocoding-control/v2.1.4/style.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v2.1.4/maptilersdk.umd.js"></script>
 
     <style>
-      body { margin: 0; padding: 0; }
-      #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        height: 50%;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
 
     <script>
-        maptilersdk.config.apiKey = "uupL1loxcvlcBrpYd60Y";
+      maptilersdk.config.apiKey = "uupL1loxcvlcBrpYd60Y";
 
-        const map = new maptilersdk.Map({
-          container: 'map', // id of HTML container element
-          style: maptilersdk.MapStyle.STREETS,
-          center: [16.3, 49.2],
-          zoom: 7,
-        });
+      const map = new maptilersdk.Map({
+        container: "map", // id of HTML container element
+        style: maptilersdk.MapStyle.STREETS,
+        center: [16.3, 49.2],
+        zoom: 7,
+      });
 
-        const gc = new maptilersdkMaptilerGeocoder.GeocodingControl();
+      const gc = new maptilersdkMaptilerGeocoder.GeocodingControl();
 
-        map.addControl(gc, 'top-left');
+      map.addControl(gc, "top-left");
     </script>
   </body>
 </html>
